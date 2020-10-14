@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+</style>
+</head>
+<body>
+
+<ul>
+  <li><a class="active" routerLink="/make_trade">Register Trade</a></li>
+  <li><a routerLink="/view_trade">View Trades</a></li>
+ <!-- <li><a>Delete Trades</a></li> --> 
+  <li><a routerLink="/view_suggestion">Suggestions</a></li>
+    <li style="float:right"><a routerLink="/logout">Log out</a></li>
+</ul>
+
+<div class="content" role="main">
+
+  <!-- Resources -->
+
+  <div class="card-container">
+    <!--change action with proper method call-->
+   <form>
+  <div class="imgconainer" style="text-align: center">
+    <img src="../../assets/trade-icon.jpg" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+
+     <label for="email"><b>Email</b></label>
+     <br>
+     <input type="text" placeholder="Enter mail ID" name="email" [(ngModel)]="email"  required>
+     <br>
+      <label for="ticker"><b>Ticker</b></label>
+     <br>
+     <input type="text" placeholder="Enter ticker" name="ticker" [(ngModel)]="ticker" required>
+     <br>
+      <label for="quantity"><b>Quantity</b></label>
+     <br>
+     <input type="number" placeholder="Enter quantity" name="quantity" [(ngModel)]="quantity" required>
+     <br>
+    <button (click)="handleViewSuggestion()" class="btn btn-success">View Trade</button>
+
+  </div>
+ 
+</form>
+</div>
+</div>
+ <div class="res-container" style="text-align: center">
+    <strong> {{res}} </strong> 
+  </div>
+  <br>
+  <br>
+ 
+</body>
+</html>

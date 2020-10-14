@@ -1,0 +1,46 @@
+
+
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <img
+    width="40"
+    alt="Angular Logo"
+    src="../../assets/trade-icon.jpg"
+  />
+
+  <span>Trade</span>
+    <div class="spacer"></div>
+</div> 
+
+<div class="content" role="main">
+
+  <!-- Resources -->
+  <h2>Registration</h2>
+  <p>Sign up</p>
+
+  <div class="card-container">
+    <!--change action with proper method call-->
+   <form>
+  <div class="imgconainer" style="text-align: center">
+    <img src="../../assets/login_icon.png" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="email" [(ngModel)]="email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" [(ngModel)]="password" required>
+     <!--<input type=“text” name=“username” [(ngModel)]=“username”>-->
+    <button (click)="handleSignup()" class="btn btn-success">Register</button>
+
+  </div>
+ 
+</form>
+
+  </div>
+
+  
+  
+</div>
+
