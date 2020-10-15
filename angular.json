@@ -120,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ngapp"
+    }
+  },
+  "defaultProject": "ngapp",
+  "cli": {
+    "analytics": false
+  }
 }

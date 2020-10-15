@@ -9,7 +9,7 @@ import { retry, catchError } from 'rxjs/operators';
 })
 export class ViewSuggestionService {
 
-  BASE_PATH: 'http://localhost:8080'
+  BASE_PATH: 'http://citichennailinux10.conygre.com:8080'
   USER_NAME_SESSION_ATTRIBUTE_NAME = 'authenticatedUser'
 
   public email: string;
@@ -26,7 +26,7 @@ export class ViewSuggestionService {
     const resp = new HttpResponse();
     const headers = new HttpHeaders().append('Content-Type', 'application/json');
     const params = new HttpParams().append('email',email).append('ticker',ticker).append('quantity',quantity.toString());
-    return this.http.get('http://localhost:8080/api/prediction', { headers, params , responseType: 'text' }).pipe(
+    return this.http.get('http://citichennailinux10.conygre.com:8080/api/prediction', { headers, params , responseType: 'text' }).pipe(
       retry(1),
       catchError(this.errorHandler)
     );

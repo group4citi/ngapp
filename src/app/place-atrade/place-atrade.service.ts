@@ -9,7 +9,7 @@ import { retry, catchError } from 'rxjs/operators';
 })
 export class PlaceATradeService {
 
-  BASE_PATH: 'http://localhost:8080'
+  BASE_PATH: 'http://citichennailinux10.conygre.com:8080'
   USER_NAME_SESSION_ATTRIBUTE_NAME = 'authenticatedUser'
 
   public email: string;
@@ -27,7 +27,7 @@ export class PlaceATradeService {
     const headers = new HttpHeaders().append('Content-Type', 'application/json');
     const params = new HttpParams().append('ticker', ticker).append('quantity', quantity.toString()).append('type',type).append('email',email);
 
-    return this.http.get('http://localhost:8080/api/make_trade', { headers, params , responseType: 'text' }).pipe(
+    return this.http.get('http://citichennailinux10.conygre.com:8080/api/make_trade', { headers, params , responseType: 'text' }).pipe(
       retry(1),
       catchError(this.errorHandler)
     );
